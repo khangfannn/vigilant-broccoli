@@ -15,7 +15,7 @@ export const  getCategories = async () => {
     try{
         const response = await axios.get(`${API_URL}categories`);
         
-        return response.data.data; 
+        return response.data.categories; 
 
     }catch(e){
         console.error('Error fetching categories: ' , e);
