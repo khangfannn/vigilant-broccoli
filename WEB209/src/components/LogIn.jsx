@@ -28,8 +28,10 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/users/login', formData);
       if (response.status === 200) {
         setMessage('Login successful!');
+        let jsonData = JSON.stringify(response.data);
+        localStorage.setItem('userinfo', jsonData);
         // You can redirect the user or store authentication tokens here
-        navigate('/#navbar');
+        navigate('/');
 
       }
     } catch (error) {
